@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BOOK DETAIL</h1>
+    <table>
+        <thead>
+            <th>asin</th>
+            <th>title</th>
+            <th>author</th>
+            <th>Link</th>
+        </thead>
+        <tbody>
+            <tr data-th-object="${book}">
+                <td><a th:href ="@{/bookdetail/{bookId}(bookId=${book.asin})}"><span data-th-text="*{asin}"></span></td>
+                <td><span data-th-text="*{title}"></span></td>
+                <td><span  data-th-text="*{author}"></span></td>
+                <td><a th:href ="*{productURL}"><span>SHOP FOR BOOK</span></td>
+                <td><span data-th-text="*{stars}"></span>STARS</td>
+                <td><span data-th-text="*{reviews}"></span>REVIEWS</td>
+                <img th:src="*{imgUrl}" width="20%">
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
