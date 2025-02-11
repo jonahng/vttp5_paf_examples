@@ -45,6 +45,8 @@ public class OrderService {
             op.setOrder_id(orderId);
             orderRepo.addDetail(op);
         } catch (Exception e) {
+            //MUST THROW ANOTHER EXCEPTION SO THAT THE TRANSACTIONAL IS IMPLEMENTED
+            throw Exception e;
             System.out.println("EXCEPTION CAUSED:");
             System.err.print(e.toString());
             // TODO: handle exception
